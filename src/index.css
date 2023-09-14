@@ -11,12 +11,12 @@ textarea {
   height: 140px;
 }
 
-button.secundairy {
-  @apply px-8 py-2 bg-transparent border-2 border-light-darkgreen text-light-darkgreen rounded-sm text-sm hover:bg-purple-700 dark:text-dark-darkgreen dark:border-dark-lightgreen;
+button.secundairy, a.secundairy {
+  @apply px-8 py-2 bg-transparent border-2 border-light-darkgreen text-light-darkgreen rounded-sm text-sm hover:border-light-purple-2 hover:text-light-purple-2 dark:text-dark-darkgreen dark:border-dark-lightgreen;
 }
 
-button.primary {
-  @apply px-8 py-2 bg-light-darkgreen border-2 border-light-darkgreen text-light-purple-1 rounded-sm text-sm hover:bg-purple-700 dark:bg-dark-lightgreen dark:border-dark-lightgreen dark:text-dark-purple-1;
+button.primary, a.primary {
+  @apply px-8 py-2 bg-light-darkgreen border-2 border-light-darkgreen text-light-purple-1 rounded-sm text-sm hover:bg-light-purple-2 hover:border-light-purple-2 dark:bg-dark-lightgreen dark:border-dark-lightgreen dark:text-dark-purple-1;
 }
 
 h1 {
