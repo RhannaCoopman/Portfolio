@@ -19,6 +19,7 @@ export default function Switcher() {
                 checked={darkSide}
                 onChange={toggleDarkMode}
                 size={30}
+                className="text-light-purple-3 dark:text-dark-purple-1"
             />
         </>
     );

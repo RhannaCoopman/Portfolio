@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Switcher from "./Switcher";
 import { Link } from "react-router-dom";
 
+
 const Nav = () => {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -9,17 +10,17 @@ const Nav = () => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   };
   return (
-    <nav className="flex justify-between items-center max-w-full w-full rounded-sm shadow-md fixed px-12 py-4 bg-light-purple-1 dark:bg-dark-purple-1 dark:text-light-purple-1">
-      <h4>Logo</h4>
+    <nav className="flex justify-between items-center max-w-full w-full text-dark-purple-1 rounded-sm shadow-md fixed px-12 py-4 bg-light-purple-1 dark:bg-dark-purple-1 dark:text-light-purple-1">
+      <h4>Rhanna Coopman</h4>
       <div className="flex items-center">
         <Switcher />
         <nav className="hidden sm:flex ml-20 gap-4 items-center list-none">
           {/* <progress max="100" value="0" className=""></progress> */}
-          <p>My skills</p>
+          {/* <p>My skills</p>
           <p>Projects</p>
           <p>About me</p>
           <p>Internship</p>
-          <p>Contact</p>
+          <p>Contact</p> */}
           {/* <ul>
             <li>
               <Link activeClass="bg-light-purple-1" smooth spy to="#skills">

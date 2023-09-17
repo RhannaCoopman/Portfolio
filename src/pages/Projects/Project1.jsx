@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../../Components/Nav";
 import video from "../../Videos/parkietentool-video_EcCIjStN.mp4";
+import { Link } from "react-router-dom";
 
 const Project1 = () => {
   return (
@@ -13,41 +14,58 @@ const Project1 = () => {
           </h1>
 
           <div className="">
-            <div className="text-light-purple-3 dark:text-dark-purple-3 m-auto">
-              This project is build using Laravel 10 and SQL. I also used ...
-              for authentication, Mollie for payments, ngrok for ... and some
-              bootstrap.
+            <div className="text-light-purple-3 dark:text-dark-purple-3 m-auto mb-8">
+              This project, built using Laravel 10, primarily focuses on backend
+              development with less emphasis on frontend design. It was
+              undertaken as part of a school assignment, where we received a
+              project brief outlining the website's requirements and
+              functionality. This encompassed everything from designing the
+              database model to implementing the backend features. The purpose
+              of the website is to allow members to purchase rings for their
+              parakeets. In addition, it also had to have a backend for the
+              admin.
             </div>
 
+            <Link
+              className="primary w-full mt-8"
+              to={"https://www.linkedin.com/in/rhanna-coopman-4589991bb/"}
+            >
+              Github
+            </Link>
+
             <div className="aspect-video overflow-hidden m-auto my-4">
-              <video width="1000" height="700" controls autoPlay>
+              <video width="" height="" controls autoPlay>
                 <source src={video} type="video/mp4" />
               </video>
             </div>
 
+            <h2 className="mb-4 mt-8 font-semibold text-light-darkgreen dark:text-dark-lightgreen">
+              Admin dashboard
+            </h2>
             <p className="text-light-purple-3 dark:text-dark-purple-3 m-auto">
-              The purpose of this application is to buy rings for birds, with a
-              dashboard for the admin. When an user buys rings, each ring should
-              be assigned a unique number and they should be able to make a
-              payment online.
+              The admin has full CRUD over the rings, members and orders. The
+              admin can also filter and sort orders, and export the filtered
+              orders to Excel.
             </p>
 
             <h2 className="mb-4 mt-8 font-semibold text-light-darkgreen dark:text-dark-lightgreen">
-              Dashboard
+              Ordering the rings
             </h2>
             <p className="text-light-purple-3 dark:text-dark-purple-3 m-auto">
-              The dashboard is only reachable for the admins. In the dashboard,
-              the admin has full CRUD over the users, rings and orders. The
-              admin can filter and sort orders, and export them to pdf and
-              excel.
-            </p>
-
-            <h2 className="mb-4 mt-8 font-semibold text-light-darkgreen dark:text-dark-lightgreen">
-              Automaticly generate ring number
-            </h2>
-            <p className="text-light-purple-3 dark:text-dark-purple-3 m-auto">
-              Each ring needs to have a unique number. This number exists out of
-              the landcode .... So to compose this unique number
+              A member can order rings via the order form on the website. Here
+              their profile details are automatically filled in. They can choose
+              how many rings of each type to order and the price will be
+              calculated and displayed below with Javascript. They can then
+              choose how they want to pay. If they choose to pay online, they
+              will be redirected to Mollie's payment page. Once the order has
+              been placed, the codes of their ordered rings are automatically
+              calculated. The code is composed of the club name, the id of the
+              member, the size of the ring, the country, the current year and
+              the umptheent number of that ring. But the rings are made out of
+              two materials with the same size, so if they order rings in both
+              materials, the umptheent number of the second material should
+              continue counting, otherwise you have rings with the exactly same
+              number.
             </p>
           </div>
         </section>
