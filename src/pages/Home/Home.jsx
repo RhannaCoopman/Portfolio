@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 
-import { zoom_in } from "../../animations/zoom";
-import { fadeInScrollTrigger } from "../../animations/fade";
+import { zoomIn } from "../../animations/zoom";
+import { fadeInScrollTrigger, fadeInScrollTriggerStagger, fadeSideScrollTriggerStagger } from "../../animations/fade";
+import { animateTextGradient } from "../../animations/appear";
 
 // Icons imports
 import { FaBeer } from "react-icons/fa";
@@ -31,33 +32,37 @@ import Nav from "../../Components/Nav";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  zoom_in();
-  fadeInScrollTrigger();
-  // // Declare variabels
-  // const [data, setData] = useState();
+  useEffect(() => {
+    const elementsWithZoomIn = document.querySelectorAll('[data-animation="zoom_in"]');
+    elementsWithZoomIn.forEach((element) => {
+      zoomIn(element);
+    });
+  }, []);
 
-  // // UseEffect to fetch the data
-  // useEffect(() => {
-  //   let isActive = true;
+  useEffect(() => {
+    // Call the animation function when the component mounts
+    animateTextGradient();
+  }, []);
 
-  //     if(!data){
-  //       fetch("../../../public/projects.json")
+  useEffect(() => {
+    // Call the animation function when the component mounts
+    fadeInScrollTrigger();
+  }, []);
 
-  //       .then(response => response.json())
-  //       .then(response => {
-  //         //Als deze component nog actief is updaten we de data van onze 2 variabelen
-  //         if(isActive) {
-  //           setData(response)
-  //         }
-  //       })
-  //     }
-  //     return () => isActive = false;
-  // }, [])
+  useEffect(() => {
+    // Call the animation function when the component mounts
+    fadeInScrollTriggerStagger();
+  }, []);
+
+  useEffect(() => {
+    // Call the animation function when the component mounts
+    fadeSideScrollTriggerStagger();
+  }, []);
 
   return (
     <>
       <Nav />
-      <main className="box-border max-w-screen bg-light-purple-1 box-border dark:bg-dark-purple-1">
+      <main className="box-border max-w-screen bg-light-purple-1 box-border dark:bg-dark-purple-1 pt-16 md:pt-0">
         {/* Hero section */}
         <section
           id="hero"
@@ -65,18 +70,17 @@ const Home = () => {
         >
           {/* Left Side */}
           <div className="w-full text-center sm:text-left sm:w-1/2 px-8 md:px-20">
-            <h2 className="text-2xl font-semibold text-light-purple-2 dark:text-dark-purple-2">
+            <h2 data-animation='fade-in' className="text-2xl font-semibold text-light-purple-2 dark:text-dark-purple-2">
               Rhanna Coopman
             </h2>
             <h1 className="">
-              <span className="text-light-darkgreen dark:text-dark-darkgreen dark:text-dark-darkgreen">
+              <span className="gradient-text bg-clip-text text-transparent bg-gradient-to-r from-dark-lightgreen to-light-darkgreen dark:to-dark-lightgreen dark:from-light-darkgreen">
                 Fullstack
               </span>{" "}
               webdeveloper with a passion for{" "}
-              <span className="text-light-darkgreen dark:text-dark-darkgreen dark:text-dark-darkgreen">
+              <span className="gradient-text bg-clip-text text-transparent bg-gradient-to-r from-dark-lightgreen to-light-darkgreen dark:to-dark-lightgreen dark:from-light-darkgreen">
                 backend
               </span>
-              .
             </h1>
             <p className="text-md text-light-purple-2 dark:text-dark-purple-2">
               Currently looking for an internship
@@ -96,20 +100,20 @@ const Home = () => {
 
           {/* Right Side */}
           <div className="w-full sm:w-1/2 px-8 md:px-20 xl:max-h-[70vh] overflow-hidden">
-            <img src={profilePic} alt="Profile" className="m-auto" />
+            <img src={profilePic} alt="Profile" className="m-auto" data-animation='zoom_in'/>
           </div>
         </section>
 
         {/* Skills section */}
         <section className="py-12 px-20">
-          <h1 className="" id="skills">
+          <h1 className="" id="skills" data-animation='fade-in'>
             My skills
           </h1>
 
           {/* First Row */}
           <div className="grid md:grid-cols-3 gap-4 mb-4">
             {/* Box 1 */}
-            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4">
+            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4" data-animation='fade-in-stagger'>
               <div className="flex justify-center items-center gap-4">
                 <DiJsBadge className="h-8 text-xl mt-3 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
@@ -122,7 +126,7 @@ const Home = () => {
             </div>
 
             {/* Box 2 */}
-            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4">
+            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4" data-animation='fade-in-stagger'>
               <div className="flex justify-center items-center gap-4">
                 <DiPhp className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
@@ -135,7 +139,7 @@ const Home = () => {
             </div>
 
             {/* Box 3 */}
-            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4">
+            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4" data-animation='fade-in-stagger'>
               <div className="flex justify-center items-center gap-4">
                 <DiCss3 className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
@@ -151,7 +155,7 @@ const Home = () => {
           {/* Second Row */}
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             {/* Box 4 */}
-            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4">
+            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4" data-animation='fade-in-stagger'>
               <div className="flex justify-center items-center gap-4">
                 <DiReact className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
@@ -164,7 +168,7 @@ const Home = () => {
             </div>
 
             {/* Box 5 */}
-            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4">
+            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4" data-animation='fade-in-stagger'>
               <div className="flex justify-center items-center gap-4">
                 <FaLaravel className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
@@ -180,7 +184,7 @@ const Home = () => {
           {/* Third Row */}
           <div className="grid md:grid-cols-3 gap-4">
             {/* Box 6 */}
-            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4">
+            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4" data-animation='fade-in-stagger'>
               <div className="flex justify-center items-center gap-4">
                 <TbApi className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
@@ -193,7 +197,7 @@ const Home = () => {
             </div>
 
             {/* Box 7 */}
-            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4">
+            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4" data-animation='fade-in-stagger'>
               <div className="flex justify-center items-center gap-4">
                 <BiLogoTailwindCss className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
@@ -206,7 +210,7 @@ const Home = () => {
             </div>
 
             {/* Box 8 */}
-            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4">
+            <div className="bg-light-purple-4 dark:bg-dark-purple-4 rounded-sm shadow-md p-4" data-animation='fade-in-stagger'>
               <div className="flex justify-center items-center gap-4">
                 <DiDatabase className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
@@ -222,12 +226,12 @@ const Home = () => {
 
         {/* Project section */}
         <section id="projects" className="py-12 px-20">
-          <h1 className="">Projects</h1>
+          <h1 className="" data-animation='fade-in'>Projects</h1>
 
           {/* Project grid */}
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             {/* Project 1 */}
-            <div className="bg-light-purple-5 dark:dark-purple-5 rounded-sm shadow-md overflow-hidden">
+            <div className="bg-light-purple-5 dark:dark-purple-5 rounded-sm shadow-md overflow-hidden" data-animation='fade-in-stagger'>
               <Link to={"/project/1"} className="w-full aspect-video">
                 <video width="1000" height="700" controls autoPlay>
                   <source src={parkietvideo} type="video/mp4" />
@@ -250,7 +254,7 @@ const Home = () => {
             </div>
 
             {/* Project 2 */}
-            <div className="bg-light-purple-5 dark:dark-purple-5 rounded-sm shadow-md">
+            <div className="bg-light-purple-5 dark:dark-purple-5 rounded-sm shadow-md" data-animation='fade-in-stagger'>
               <Link to={"/project/2"} className="w-full aspect-video">
                 <img
                   src={airbnbPic}
@@ -276,7 +280,7 @@ const Home = () => {
             </div>
 
             {/* Project 3 */}
-            <div className="bg-light-purple-5 dark:dark-purple-5 rounded-sm shadow-md overflow-hidden">
+            <div className="bg-light-purple-5 dark:dark-purple-5 rounded-sm shadow-md overflow-hidden" data-animation='fade-in-stagger'>
               <Link to={"/project/3"} className="w-full aspect-video"></Link>
               <div className="grid grid-cols-4 px-8 py-4 h-auto">
                 <Link
@@ -298,7 +302,7 @@ const Home = () => {
 
         {/* About me section */}
         <section id="about" className="py-12 px-20">
-          <h1 className="">About me</h1>
+          <h1 data-animation='fade-in' className="">About me</h1>
 
           <div className="grid grid-cols-3 lg:grid-cols-2 gap-8 lg:gap-24">
             <div
@@ -311,18 +315,18 @@ const Home = () => {
             </div>
 
             <div className="col-span-full md:col-span-1 lg:col-span-1 overflow-hidden m-auto">
-              <img src={profilePic} alt="Profile" className="m-auto" />
+              <img src={profilePic} alt="Profile" className="m-auto" data-animation="zoom_in" />
             </div>
           </div>
         </section>
 
         {/* Internship section */}
         <section id="internship" className="py-12 px-20">
-          <h1 className="">Internship</h1>
+          <h1 data-animation='fade-in' className="">Internship</h1>
 
           <div className="grid grid-cols-3 lg:grid-cols-2 gap-8 lg:gap-24">
             <div className="col-span-full md:col-span-1 lg:col-span-1 overflow-hidden m-auto bg-red-200">
-              <img src={codePic} alt="Code" className="object-cover" />
+              <img src={codePic} alt="Code" className="object-cover"/>
             </div>
 
             <div className="text-light-purple-3 dark:text-dark-purple-3 col-span-full md:col-span-2 lg:col-span-1 m-auto">
@@ -341,24 +345,24 @@ const Home = () => {
 
         {/* Contact section */}
         <section id="contact" className="py-12 px-20 pb-36">
-          <h1 className="">Contact me</h1>
+          <h1 data-animation='fade-in' className="">Contact me</h1>
 
           <div className="grid grid-rows-3 gap-6">
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-10 items-center" data-animation='fade-side-stagger'>
               <BsTelephone className="text-light-darkgreen dark:text-dark-darkgreen text-2xl" />
               <p className="break-words text-light-purple-3 dark:text-dark-purple-3">
                 +32 479 498 223
               </p>
             </div>
 
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-10 items-center" data-animation='fade-side-stagger'>
               <HiOutlineMail className="text-light-darkgreen dark:text-dark-darkgreen text-2xl" />
               <p className="break-words text-light-purple-3 dark:text-dark-purple-3">
                 rhanna.coopman<wbr></wbr>@hotmail.com
               </p>
             </div>
 
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-10 items-center" data-animation='fade-side-stagger'>
               <BsLinkedin className="text-light-darkgreen dark:text-dark-darkgreen text-2xl" />
               <Link
                 to={"https://www.linkedin.com/in/rhanna-coopman-4589991bb/"}

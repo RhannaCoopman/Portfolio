@@ -19,7 +19,8 @@ export default function Switcher() {
                 checked={darkSide}
                 onChange={toggleDarkMode}
                 size={30}
-                className="text-light-purple-3 dark:text-dark-purple-1"
+                moonColor={"dark-purple-3"}
+                sunColor={"light-purple-3"}
             />
         </>
     );

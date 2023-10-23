@@ -10,7 +10,7 @@ const Nav = () => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   };
   return (
-    <nav className="flex justify-between items-center max-w-full w-full text-dark-purple-1 rounded-sm shadow-md fixed px-12 py-4 bg-light-purple-1 dark:bg-dark-purple-1 dark:text-light-purple-1">
+    <nav className="z-10 flex justify-between items-center max-w-full w-full text-dark-purple-1 rounded-sm shadow-md fixed px-12 py-4 bg-light-purple-1 dark:bg-dark-purple-1 dark:text-light-purple-1">
       <h4>Rhanna Coopman</h4>
       <div className="flex items-center">
         <Switcher />

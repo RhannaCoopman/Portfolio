@@ -13,7 +13,11 @@ module.exports = {
         "dark-purple-5" : "#483452",
         "dark-darkgreen" : "#80C2AF",
         "dark-lightgreen" : "#80C2AF",
+        "dark-lightgreen" : "#80C2AF",
+        "dark-brightpurple" : "#411969",
         "dark-placeholder-purple" : "#AE9FB5",
+        'green-blue': ["#48AC8F", "#80C2AF"],
+
 
         // light
         "light-purple-1" : "#E5DEE8",

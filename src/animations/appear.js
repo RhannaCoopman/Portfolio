@@ -56,3 +56,18 @@ export const appear_to_right = () => {
         )
     }
 };
+
+export function animateTextGradient() {
+    const gradientTexts = gsap.utils.toArray(".gradient-text");
+  
+    gradientTexts.forEach((element) => {
+      gsap.to(element, {
+        color: "#80D6BD", // Change to your ending color
+        scrollTrigger: {
+          trigger: element,
+          start: "top 25%",
+          scrub: true,
+        },
+      });
+    });
+  }
