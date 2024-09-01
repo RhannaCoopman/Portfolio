@@ -20,7 +20,8 @@ import { DiCss3 } from "react-icons/di";
 import { DiDatabase } from "react-icons/di";
 import { DiReact } from "react-icons/di";
 import { TbApi } from "react-icons/tb";
-import { BiLogoTailwindCss } from "react-icons/bi";
+import { SiOpenai } from "react-icons/si";
+import { FaPython } from "react-icons/fa";
 
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
@@ -147,7 +148,7 @@ const Home = () => {
               <div className="flex justify-center items-center gap-4">
                 <DiPhp className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
-                  Php
+                  PHP
                 </h3>
               </div>
               {/* <p className="mt-2 text-center text-light-purple-3 dark:text-dark-purple-3">
@@ -180,9 +181,9 @@ const Home = () => {
               data-animation="fade-in-stagger"
             >
               <div className="flex justify-center items-center gap-4">
-                <DiReact className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
+                <FaPython className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
-                  MERN
+                  Python
                 </h3>
               </div>
               {/* <p className="mt-2 text-center text-light-purple-3 dark:text-dark-purple-3">
@@ -217,7 +218,7 @@ const Home = () => {
               <div className="flex justify-center items-center gap-4">
                 <TbApi className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
-                  API
+                  API's
                 </h3>
               </div>
               {/* <p className="mt-2 text-center text-light-purple-3 dark:text-dark-purple-3">
@@ -231,9 +232,9 @@ const Home = () => {
               data-animation="fade-in-stagger"
             >
               <div className="flex justify-center items-center gap-4">
-                <BiLogoTailwindCss className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
+                <SiOpenai className="h-8 text-2xl mt-2 text-light-darkgreen dark:text-dark-darkgreen" />
                 <h3 className="text-lg font-semibold mt-3 text-light-darkgreen dark:text-dark-darkgreen">
-                  Tailwind CSS
+                  AI
                 </h3>
               </div>
               {/* <p className="mt-2 text-center text-light-purple-3 dark:text-dark-purple-3">
@@ -396,9 +397,9 @@ const Home = () => {
               data-animation="fade-in"
               className="text-light-purple-3 dark:text-dark-purple-3 col-span-full md:col-span-2 lg:col-span-1 m-auto"
             >
-              Hi! I'm Rhanna and I'm a web development student at Artevelde
-              Hogeschool. My hobbies are fitness and going on walks, coding and
-              food (cooking, eating, looking up recipes...).
+              Hi! Ik ben Rhanna en ik ben een junior developer. Ik ben net
+              afgestudeerd aan Artevelde hogeschool. Mijn interesses zijn
+              wandelen, koken en bakken.
             </div>
 
             <div className="col-span-full md:col-span-1 lg:col-span-1 overflow-hidden m-auto">
@@ -412,10 +413,10 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Internship section */}
+        {/* Work section */}
         <section id="internship" className="py-12 px-20">
           <h1 data-animation="fade-in" className="">
-            Internship
+            Work
           </h1>
 
           <div className="grid grid-cols-3 lg:grid-cols-2 gap-8 lg:gap-24">
@@ -424,15 +425,14 @@ const Home = () => {
             </div>
 
             <div className="text-light-purple-3 dark:text-dark-purple-3 col-span-full md:col-span-2 lg:col-span-1 m-auto">
-              I am currently looking for an internship in web development in
-              Europa. i'm from Belgium and would like to do an international
-              internship. <br></br>
-              This internship must be 10 weeks long and it should start on the
-              5th of February and end on the 12th of April. <br></br>
-              I'm am looking for an internship that where I can learn as much as
-              possible and where I will be challenged to become a better
-              developer. I am looking for a fullstack or backend development
-              internship.
+              Ik ben momenteel op zoek naar een junior positie in
+              softwareontwikkeling. Ik ben vooral geïnteresseerd in een back-end
+              positie. Momenteel heb ik de meeste ervaring in Laravel, en dit is
+              zeker een richting waarin ik verder wil gaan. Daarnaast heb ik een
+              interesse ontwikkeld in Python en AI, en zou ik hier ook zeker in
+              willen groeien. Ik vind dat ik nog veel groeipotentieel heb en nog
+              veel programmeertalen en technologieën te ontdekken heb, dus ik
+              wil me zeker nog niet beperken tot enkel deze voorkeuren.
             </div>
           </div>
         </section>
